@@ -1,0 +1,12 @@
+<h1 class="text-center font-bold text-3xl p-10">Flats</h1>
+<div class="flex flex-wrap mx-auto max-w-3xl">
+    <% @flats.each do |flat| %>
+        <div class="w-1/3 p-3">
+            <%= link_to flat_path(flat["id"]) do %>
+                <%= image_tag flat["imageUrl"], alt: flat["name"], class: "mb-2" %>
+                <h4 class="font-bold"><%= flat["name"] %></h4>
+                <h6 class="text-gray-400 text-sm"><%= flat["price"] %> <%= flat['priceCurrency'] %></h6>
+            <% end %>
+        </div>   
+    <% end %>
+</div>
